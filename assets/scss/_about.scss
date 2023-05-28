@@ -1,0 +1,40 @@
+.about-container {
+  height: 100%;
+}
+
+.about {
+  &__avatar {
+    height: 19rem;
+    display: flex;
+    justify-content: center;
+
+    & img {
+      height: 100%;
+      border-radius: 4%;
+    }
+  }
+
+  &__author {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    p {
+      margin: 0;
+    }
+  }
+
+  &__description {
+    width: calc(70rem + 10vw);
+    margin-inline: auto;
+
+    @media all and (max-width: 790px) {
+      width: 100%;
+      padding-inline: 1.5rem;
+    }
+  }
+
+  &__body {
+    padding-inline: 1rem;
+  }
+}

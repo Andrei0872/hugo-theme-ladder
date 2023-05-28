@@ -10,13 +10,20 @@ html {
   scroll-behavior: smooth;
 }
 
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
 body {
   color: $fg-color;
   background-color: $bg-color;
   font-family: $font-family;
   font-size: 1.8em;
   font-weight: 400;
-  line-height: 1.8em;
+  line-height: 1.7em;
 
   @media only screen and (max-width: 768px) {
     font-size: 1.6em;
@@ -167,8 +174,8 @@ pre {
   .copy-code {
     display: none;
     padding: 1rem;
-    position:absolute;
-    right:0;
+    position: absolute;
+    right: 0;
     top: 1rem;
     margin-right: 1rem;
     color: $bg-color;
@@ -235,4 +242,10 @@ table th {
 
 img {
   max-width: 100%;
+}
+
+.wrapper {
+  display: grid;
+  height: 100%;
+  grid-template-rows: auto 1fr auto;
 }
