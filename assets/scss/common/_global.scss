@@ -33,7 +33,7 @@ body {
 
 a {
   font-weight: 500;
-  color: $link-color;
+  color: $color-dark-blue-200;
   text-decoration: none;
   transition: all 0.25s ease-in;
 
@@ -140,6 +140,7 @@ h6 {
 b,
 strong {
   font-weight: 700;
+  color: $color-dark-orange;
 }
 
 small {
