@@ -145,3 +145,21 @@
 [data-dark-mode] .tags .tags-list a {
   background: $gray-800;
 }
+
+[data-dark-mode] {
+  & .blog-single {
+
+    & h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+      color: #6ab0e5;
+    }
+
+    .toggle {
+      background-color: initial;
+      border: 2px solid #6ab0e5;
+    }
+  }
+}
