@@ -1,4 +1,4 @@
-<p>
+<div>
   <small>
     {{ .Date | time.Format ":date_long" }}&nbsp;· {{ i18n "word_count" .WordCount -}}&nbsp;· {{ i18n "reading_time"
     .ReadingTime -}}
@@ -9,9 +9,14 @@
     {{ with .GetTerms "tags"}}
     ·
     {{ end }}
-    {{ range (.GetTerms "tags") }}
-    <a href="{{ .Permalink }}">{{ .LinkTitle }}</a>
-    {{ end }}
   </small>
+
+  <ul class="tags-container">
+    {{ range (.GetTerms "tags") }}
+    <li class="tag">
+      <a href="{{ .Permalink }}">{{ .LinkTitle }}</a>
+    </li>
+    {{ end }}
+  </ul>
   {{ end }}
-</p>
+</div>

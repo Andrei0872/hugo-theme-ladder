@@ -9,7 +9,7 @@
     padding: 0.5rem 1.5rem 1.5rem 0.5rem;
     background: white;
     border-bottom: 1px dashed $gray-600;
-    padding-block-end: 0;
+    padding-block-end: 1.3rem;
 
     &>h3 {
       margin: 0;
@@ -39,6 +39,7 @@
     top: 4rem;
     height: auto;
     overflow-y: auto;
+    margin-block-start: .7rem;
 
     ul {
       padding-left: 0;
@@ -173,5 +174,40 @@
 
   &>article {
     margin-block-start: 2rem;
+  }
+}
+
+.tags-container {
+  margin: 0;
+  display: inline-flex;
+  list-style: none;
+  gap: 3px;
+  padding: 0;
+  align-items: center;
+  gap: .4rem;
+
+  & .tag {
+    background: #f2f2f2;
+    padding: 4px 7px;
+    font-size: 14px;
+    margin-right: 3px;
+    line-height: 1;
+    border-radius: 3px;
+    color: $gray-700;
+
+    a {
+      color: currentColor;
+
+      &:hover {
+        color: $color-dark-blue;
+      }
+    }
+
+
+    [data-dark-mode] & {
+      background-color: transparent;
+      border: 1px solid #f2f2f2f2;
+      color: $gray-500;
+    }
   }
 }
