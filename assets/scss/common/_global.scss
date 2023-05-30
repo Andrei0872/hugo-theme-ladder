@@ -159,6 +159,10 @@ small {
   background-color: var(--theme-bg-cl) !important;
 }
 
+.highlight code {
+  font-family: 'JetBrains Mono', monospace;
+}
+
 pre {
   display: block;
   font-family: $code-font-family;

@@ -5,12 +5,13 @@
     {{- /* Meta */}}
     <meta charset="utf-8">
     <meta name="description" content="Ladder@{{- with .Description }}{{ . }}{{- else }}{{- if or .IsPage .IsSection}}
-    {{- .Summary | default (printf "%s - %s" .Title  site.Title) }}{{- else }}
-    {{- with site.Params.description }}{{ . }}{{- end }}{{- end }}{{- end -}}">
+    {{- .Summary | default (printf " %s - %s" .Title site.Title) }}{{- else }} {{- with site.Params.description }}{{ .
+        }}{{- end }}{{- end }}{{- end -}}">
     <meta name="author" content="{{ site.Params.author }}">
-    <link rel="canonical" href="{{ if .Params.canonicalURL -}} {{ trim .Params.canonicalURL " " }} {{- else -}} {{ .Permalink }} {{- end }}">
+    <link rel="canonical"
+        href="{{ if .Params.canonicalURL -}} {{ trim .Params.canonicalURL " " }} {{- else -}} {{ .Permalink }} {{- end }}">
     {{- if site.Params.analytics.google.SiteVerificationTag }}
-        <meta name="google-site-verification" content="{{ site.Params.analytics.google.SiteVerificationTag }}">
+    <meta name="google-site-verification" content="{{ site.Params.analytics.google.SiteVerificationTag }}">
     {{- end }}
 
     <link rel="alternate" type="application/rss+xml" href="{{.Site.BaseURL }}/index.xml" title="{{ .Site.Title }}">
@@ -20,6 +21,9 @@
     {{ partial "common/icon.html" . }}
 
     <link rel="stylesheet" href="https://cdn.staticfile.org/lxgw-wenkai-webfont/1.6.0/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet">
 
     {{ if .Site.IsServer }}
     {{ $cssFile := (dict "targetPath" "css/main.css" "enableSourceMap" true ) }}
@@ -28,7 +32,8 @@
     {{ else }}
     {{ $cssFile := (dict "targetPath" "css/main.css" ) }}
     {{ $styles := resources.Get "/scss/app.scss" | toCSS $cssFile | minify | fingerprint }}
-    <link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}" crossorigin="anonymous" media="screen" />
+    <link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}"
+        crossorigin="anonymous" media="screen" />
     {{ end }}
 
     {{ $highlightjs := resources.Get "js/highlight.min.js" | minify | fingerprint }}
@@ -36,7 +41,7 @@
     <script>hljs.highlightAll();</script>
 
     {{ if .Site.Params.options.showDarkMode -}}
-        {{ $darkModeInit := resources.Get "js/darkmode-init.js" | js.Build | minify -}}
-        <script>{{ $darkModeInit.Content | safeJS }}</script>
+    {{ $darkModeInit := resources.Get "js/darkmode-init.js" | js.Build | minify -}}
+    <script>{ { $darkModeInit.Content | safeJS } }</script>
     {{ end -}}
 </head>
