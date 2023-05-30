@@ -153,7 +153,10 @@ small {
   margin: 2rem 0 2rem;
   padding: 2rem;
   border-radius: 1rem;
-  background-color: $code-bg-color-dark !important;
+
+  // Resorting to this because some styles are applied inline
+  // by the `highlight` library.
+  background-color: var(--theme-bg-cl) !important;
 }
 
 pre {
