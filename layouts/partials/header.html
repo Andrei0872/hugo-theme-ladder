@@ -8,11 +8,26 @@
             <span></span><span></span><span></span>
         </label>
         {{ if .Site.Menus.main }}
+        {{- $currentPage := . }}
         <ul class="navigation-list" id="navigation-list">
             {{ with .Site.Menus.main}}
             {{ range sort . }}
+            {{- $menu_item_url := (cond (strings.HasSuffix .URL "/") .URL (printf "%s/" .URL) ) | absLangURL }}
+            {{- $page_url:= $currentPage.Permalink | absLangURL }}
+
             <li class="navigation-item navigation-menu">
-                <a class="navigation-link" href="{{ index (apply (slice .URL) (.Params.urlFunc | default "relLangURL") ".") 0 }}">{{ .Name }}</a>
+                {{- $is_link_active := strings.HasPrefix $page_url $menu_item_url }}
+                <a
+                    class="navigation-link {{ cond $is_link_active "active" "" }}"
+                    href="{{ index (apply (slice .URL) (.Params.urlFunc | default "relLangURL") ".") 0 }}"
+                >
+                    <!-- I admit this is not semantic, but the built-in theme has plenty of styles for -->
+                    <!-- the `span` element and I don't think it's worth spending time on putting -->
+                    <!-- everything together. -->
+                    <div>
+                        {{ .Name }}
+                    </div>
+                </a>
             </li>
             {{ end }}
             {{ end }}
