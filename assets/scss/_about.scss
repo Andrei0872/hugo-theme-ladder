@@ -11,6 +11,10 @@
     & img {
       height: 100%;
       border-radius: 4%;
+
+      [data-dark-mode] & {
+        border: 2px solid $gray-500;
+      }
     }
   }
 
