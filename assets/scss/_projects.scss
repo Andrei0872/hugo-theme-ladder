@@ -11,7 +11,7 @@
     align-items: center;
     color: $fg-color;
 
-    [data-dark-mode] & {
+    [data-dark-mode] &[class] {
       color: $color-dark-orange;
     }
   }

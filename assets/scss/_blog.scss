@@ -198,11 +198,10 @@
     a {
       color: currentColor;
 
-      &:hover {
+      [data-dark-mode] & {
         color: $color-dark-blue;
       }
     }
-
 
     [data-dark-mode] & {
       background-color: transparent;

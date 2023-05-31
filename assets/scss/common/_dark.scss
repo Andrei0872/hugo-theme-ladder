@@ -16,8 +16,14 @@
   color: $body-color-dark;
 }
 
-[data-dark-mode] body a {
-  color: $color-dark-blue;
+[data-dark-mode] {
+  :is(.navigation, h1, h2, h3, h4) a {
+    color: #fff;
+  }
+
+  :where(#content, footer) a {
+    color: $color-dark-blue;
+  }
 }
 
 [data-dark-mode] body a.text-body {
@@ -154,7 +160,7 @@
     h3,
     h4,
     h5 {
-      color: #6ab0e5;
+      color: #fff;
     }
 
     .toggle {
