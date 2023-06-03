@@ -6,7 +6,7 @@
     align-items: center;
   }
 
-  &__gh-link {
+  &__gh-link, &__demo-link {
     display: flex;
     align-items: center;
     color: $fg-color;
@@ -19,4 +19,13 @@
   & .summary {
     margin: 0;
   }
+}
+
+.project__icon-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.project-title {
+  margin-block-end: 1rem;
 }
