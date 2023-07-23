@@ -35,6 +35,14 @@
 
   .navigation-brand {
     float: left;
+
+    & span {
+      color: $color-dark-blue-200;
+
+      [data-dark-mode] & {
+        color: $color-dark-orange;
+      }
+    }
   }
 
   .navigation-list {
