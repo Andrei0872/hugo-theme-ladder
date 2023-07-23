@@ -12,7 +12,7 @@
   </small>
 
   <ul class="tags-container">
-    {{ range (.GetTerms "tags") }}
+    {{ range (.GetTerms "blog_tags") }}
     <li class="tag">
       <a href="{{ .Permalink }}">{{ .LinkTitle }}</a>
     </li>

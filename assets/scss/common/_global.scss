@@ -261,3 +261,35 @@ img {
 .markdown-image {
   text-align: center;
 }
+
+.all-tags-filter {
+  position: relative;
+  max-width: 80rem;
+  margin: auto;
+  padding: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 1rem;
+  list-style: none;
+  column-gap: .4rem;
+
+  & .tag {
+    background: #f2f2f2;
+    padding: 4px 7px;
+    font-size: 14px;
+    margin-right: 3px;
+    line-height: 1;
+    border-radius: 3px;
+    color: #495057;
+
+    [data-dark-mode] & {
+      background-color: transparent;
+      border: 1px solid #f2f2f2f2;
+      color: #adb5bd;
+    }
+
+    & a {
+      color: currentColor;
+    }
+  }
+}
