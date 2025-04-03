@@ -239,3 +239,11 @@
 .blog-content a > code {
   color: $color-dark-blue-200;
 }
+
+.video-container {
+  width: 100%;
+
+  & > video {
+    width: 100%;
+  }
+}
